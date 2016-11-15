@@ -96,7 +96,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="70dp">
 
-                            <<com.rengwuxian.materialedittext.MaterialEditText
+                            <com.rengwuxian.materialedittext.MaterialEditText
                                 android:id="@+id/txt_Salida"
                                 android:layout_height="match_parent"
                                 android:layout_width="match_parent"
