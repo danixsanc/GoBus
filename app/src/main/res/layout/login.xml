@@ -55,8 +55,6 @@
             app:met_errorColor="#6e6e6e"/>
 
 
-
-
         <Button
             android:id="@+id/btnOlvidePass"
             android:layout_width="match_parent"
@@ -91,7 +89,19 @@
             android:background="@color/colorAccent"
             android:textColor="#ffffff"
             android:textAllCaps="false"
-            android:text="Iniciar" />
+            android:text="Iniciar sesión" />
+
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:background="@color/colorAccent"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:text="Registrarse"
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 </ScrollView>
