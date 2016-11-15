@@ -8,6 +8,11 @@
 
     <color name="line_drawer">#d9d8d8</color>
 
+    <color name="colorOrigen">#D3E618</color>
+    <color name="colorDestino">#34CC07</color>
+
     <color name="colorAccent">#f0514b</color>
     <color name="colorBorder">#dcdcdc</color>
+
+    <color name="tabsScrollColor">#acc9e2</color>
 </resources>
