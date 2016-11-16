@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="@color/colorPrimary"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
@@ -137,38 +138,45 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
-
-            </Spinner>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/boton"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:orientation="horizontal">
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#fff"
+                android:layout_marginTop="5dp"
+                android:elevation="2dp"
+                android:id="@+id/calendarButton">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Calendario"
-                        android:textSize="30dp"/>
+                        android:layout_height="wrap_content"
+                        android:text="Elegir fecha"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="25dp"
+                        android:paddingTop="10dp" />
                 </LinearLayout>
 
-                <ImageView
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="150dp"
+                        android:layout_gravity="right"
+                        android:src="@drawable/ic_arrow_drop_down_black_48dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txtDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_drop_down_black_48dp"
-                    />
-
+                    android:hint="Fecha"
+                    android:textSize="30dp"/>
             </LinearLayout>
 
 
