@@ -22,6 +22,10 @@
             android:name=".app.MainActivity"
             android:windowSoftInputMode="stateHidden"></activity>
 
+        <activity
+            android:label="Perfil"
+            android:name=".actividades.Perfil.Nav_Perfil"
+            android:windowSoftInputMode="stateHidden"></activity>
 
     </application>
 

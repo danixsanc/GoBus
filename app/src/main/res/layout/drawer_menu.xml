@@ -88,7 +88,8 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_history_red_600_48dp"
-                    android:layout_marginLeft="16dp"/>
+                    android:layout_marginLeft="16dp"
+                    android:tint="@color/colorIcon"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -119,7 +120,8 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_person_red_600_48dp"
-                    android:layout_marginLeft="16dp"/>
+                    android:layout_marginLeft="16dp"
+                    android:tint="@color/colorIcon"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -150,7 +152,8 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_directions_bus_red_600_48dp"
-                    android:layout_marginLeft="16dp"/>
+                    android:layout_marginLeft="16dp"
+                    android:tint="@color/colorIcon"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -181,7 +184,8 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_map_red_600_48dp"
-                    android:layout_marginLeft="16dp"/>
+                    android:layout_marginLeft="16dp"
+                    android:tint="@color/colorIcon"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -212,7 +216,8 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_help_outline_red_600_48dp"
-                    android:layout_marginLeft="16dp"/>
+                    android:layout_marginLeft="16dp"
+                    android:tint="@color/colorIcon"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -243,7 +248,8 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/ic_power_settings_new_red_600_48dp"
-                    android:layout_marginLeft="16dp"/>
+                    android:layout_marginLeft="16dp"
+                    android:tint="@color/colorIcon"/>
 
                 <TextView
                     android:layout_width="match_parent"

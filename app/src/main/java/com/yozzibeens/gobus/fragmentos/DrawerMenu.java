@@ -1,6 +1,7 @@
 package com.yozzibeens.gobus.fragmentos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yozzibeens.gobus.R;
+import com.yozzibeens.gobus.actividades.Perfil.Nav_Perfil;
 //import com.yozzibeens.gobus.utilerias.Preferencias;
 
 /**
@@ -173,7 +175,7 @@ public class DrawerMenu extends Fragment {
                 public void onClick(View view) {
                     mDrawerLayout.closeDrawers();
                 }
-            });
+            });*/
 
             LinearLayout perfil;
             perfil = (LinearLayout) view.findViewById(R.id.nav_perfil);
@@ -183,6 +185,8 @@ public class DrawerMenu extends Fragment {
                     startActivity(new Intent(getActivity(), Nav_Perfil.class));
                 }
             });
+
+        /*
 
             LinearLayout historial;
             historial = (LinearLayout) view.findViewById(R.id.nav_historial);

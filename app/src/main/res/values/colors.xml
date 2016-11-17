@@ -14,5 +14,10 @@
     <color name="colorAccent">#f0514b</color>
     <color name="colorBorder">#dcdcdc</color>
 
+    <color name="colorAcept">#077408</color>
+
+    <color name="colorIcon">#14a3ab</color>
+
+
     <color name="tabsScrollColor">#acc9e2</color>
 </resources>

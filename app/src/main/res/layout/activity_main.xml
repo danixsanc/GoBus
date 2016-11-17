@@ -146,40 +146,102 @@
                 android:background="#fff"
                 android:layout_marginTop="5dp"
                 android:elevation="2dp"
-                android:id="@+id/calendarButton">
+                android:id="@+id/calendarButton"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Elegir fecha"
                         android:textSize="20dp"
                         android:layout_marginLeft="25dp"
                         android:paddingTop="10dp" />
-                </LinearLayout>
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="150dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
                         android:layout_gravity="right"
                         android:src="@drawable/ic_arrow_drop_down_black_48dp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
                 <TextView
                     android:id="@+id/txtDate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Fecha"
-                    android:textSize="30dp"/>
+                    android:textSize="30dp"
+                    android:gravity="center"
+                    android:drawableLeft="@drawable/ic_date_range_blue_grey_500_48dp"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#fff"
+                android:layout_marginTop="5dp"
+                android:elevation="2dp"
+                android:id="@+id/hourButton"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Elegir hora"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="25dp"
+                    android:paddingTop="10dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_arrow_drop_down_black_48dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+                <TextView
+                    android:id="@+id/txtHour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hora"
+                    android:textSize="30dp"
+                    android:gravity="center"
+                    android:drawableLeft="@drawable/ic_access_time_blue_500_48dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBuscar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="25dp"
+                android:background="@color/colorAcept"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:text="Buscar"
+                android:layout_marginTop="20dp"
+                android:elevation="2dp"/>
 
         </LinearLayout>
 
