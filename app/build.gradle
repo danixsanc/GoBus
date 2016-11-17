@@ -34,5 +34,6 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
 
     compile 'com.wdullaer:materialdatetimepicker:2.5.0'
+    compile 'cn.pedant.sweetalert:library:1.3'
 
 }

@@ -21,6 +21,8 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.Calendar;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 
 public class MainActivity extends AppCompatActivity implements
         View.OnClickListener,
@@ -100,8 +102,19 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        String date = dayOfMonth+"/"+(monthOfYear+1)+"/"+year;
-        txtDate.setText(date);
+        Calendar now = Calendar.getInstance();
+        if((dayOfMonth < now.get(Calendar.DAY_OF_MONTH))||
+           (monthOfYear < now.get(Calendar.MONTH))      ||
+           (year < now.get(Calendar.YEAR))){
+
+            SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+            dialog.setTitleText("No escoja fecha anterior a hoy!").show();
+
+        }else{
+            String date = dayOfMonth+"/"+(monthOfYear+1)+"/"+year;
+            txtDate.setText(date);
+        }
+
     }
 
     @Override
