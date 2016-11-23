@@ -1,5 +1,6 @@
 package com.yozzibeens.gobus.app;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,14 +13,19 @@ import android.widget.Toast;
 
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+import com.wdullaer.materialdatetimepicker.date.MonthAdapter;
 import com.yozzibeens.gobus.R;
+import com.yozzibeens.gobus.actividades.Resultados;
 import com.yozzibeens.gobus.fragmentos.DrawerMenu;
 
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -54,8 +60,7 @@ public class MainActivity extends AppCompatActivity implements
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast t = Toast.makeText(getApplicationContext(),"Si jala",Toast.LENGTH_SHORT);
-                t.show();
+                startActivity(new Intent(MainActivity.this, Resultados.class));
             }
         });
 
@@ -103,31 +108,71 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         Calendar now = Calendar.getInstance();
-        if((dayOfMonth < now.get(Calendar.DAY_OF_MONTH))||
-           (monthOfYear < now.get(Calendar.MONTH))      ||
-           (year < now.get(Calendar.YEAR))){
+        String fechaDespues = monthOfYear+"/"+dayOfMonth+"/"+year;
 
-            SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
-            dialog.setTitleText("No escoja fecha anterior a hoy!").show();
+        String fecha = now.get(Calendar.MONTH)+"/"+now.get(Calendar.DAY_OF_MONTH)+"/"+now.get(Calendar.YEAR);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 
-        }else{
-            String date = dayOfMonth+"/"+(monthOfYear+1)+"/"+year;
-            txtDate.setText(date);
+        Date converterDate = new Date();
+        Date converterDate2 = new Date();
+
+        try{
+            converterDate = dateFormat.parse(fecha);
+            converterDate2 = dateFormat.parse(fechaDespues);
+
+
+
+            if(converterDate2.equals(converterDate) || converterDate2.after(converterDate))
+            {
+                String date = dayOfMonth+"/"+(monthOfYear+1)+"/"+year;
+                txtDate.setText(date);
+
+            }
+            else{
+                SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                dialog.setTitleText("No escoja fecha anterior a hoy!").show();
+            }
+        }
+        catch(ParseException e){
+
         }
 
     }
 
     @Override
     public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int second) {
-        if (String.valueOf(minute).length() == 1){
-            String time = hourOfDay+":0"+minute;
-            txtHour.setText(time);
-        }
-        else{
-            String time = hourOfDay+":"+minute;
-            txtHour.setText(time);
-        }
+        Calendar now = Calendar.getInstance();
 
+        String fechaDespues = (String) txtDate.getText();
+        String fecha = now.get(Calendar.MONTH)+"/"+now.get(Calendar.DAY_OF_MONTH)+"/"+now.get(Calendar.YEAR);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+
+        Date converterDate = new Date();
+        Date converterDate2 = new Date();
+
+        try{
+            converterDate = dateFormat.parse(fecha);
+            converterDate2 = dateFormat.parse(fechaDespues);
+            if(converterDate2.after(converterDate))
+            {
+                if (String.valueOf(minute).length() == 1){
+                    String time = hourOfDay+":0"+minute;
+                    txtHour.setText(time);
+                }
+                else{
+                    String time = hourOfDay+":"+minute;
+                    txtHour.setText(time);
+                }
+
+            }
+            else{
+                SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                dialog.setTitleText("No escoja hora anterior a la actual!").show();
+            }
+        }
+        catch(ParseException e){
+
+        }
 
     }
 }

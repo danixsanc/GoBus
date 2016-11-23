@@ -20,12 +20,20 @@
         <activity
             android:label="Inicio"
             android:name=".app.MainActivity"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
 
         <activity
             android:label="Perfil"
             android:name=".actividades.Perfil.Nav_Perfil"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
+        <activity
+            android:label="Resultados"
+            android:name=".actividades.Resultados"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
 
     </application>
 
