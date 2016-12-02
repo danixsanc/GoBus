@@ -53,7 +53,7 @@ public class Nav_Perfil extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.getBackground().setAlpha(0);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.colorBorder));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorPrimary));
 
         Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 

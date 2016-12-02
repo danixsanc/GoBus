@@ -25,223 +25,245 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorIcon"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
-                android:id="@+id/llContenido"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@color/colorPrimary"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:paddingBottom="30dp"
-                android:paddingRight="16dp">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_weight="0.7"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        android:src="@color/colorOrigen"
-                        app:civ_border_color="@color/colorBorder"
-                        app:civ_border_width="1dp"/>
-
-                    <LinearLayout
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginTop="55dp"
-                        android:background="@color/colorBorder"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                    </LinearLayout>
-
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="15dp"
-                        android:src="@color/colorDestino"
-                        app:civ_border_color="@color/colorBorder"
-                        app:civ_border_width="1dp"/>
-                </RelativeLayout>
-
+                android:layout_height="match_parent"
+                android:orientation="vertical">
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:id="@+id/llContenido"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:orientation="vertical">
+                    android:padding="5dp"
+                    android:background="@color/colorIcon"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:paddingBottom="30dp"
+                    android:paddingRight="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
+                            android:src="@color/colorOrigen"
+                            app:civ_border_color="@color/colorBorder"
+                            app:civ_border_width="1dp"/>
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="55dp"
+                            android:background="@color/colorBorder"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                        </LinearLayout>
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="15dp"
+                            android:src="@color/colorDestino"
+                            app:civ_border_color="@color/colorBorder"
+                            app:civ_border_width="1dp"/>
+                    </RelativeLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="#fff"
-                        android:layout_marginBottom="4dp"
-                        android:elevation="2dp">
-                        <FrameLayout
+                        android:layout_weight="3"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="70dp">
-
-                            <com.rengwuxian.materialedittext.MaterialEditText
-                                android:id="@+id/txt_Salida"
-                                android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@color/colorIcon"
+                            android:layout_marginBottom="4dp">
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_marginTop="30dp"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="16dp"
-                                android:hint="Salida"
-                                android:paddingRight="30dp"
-                                android:textColorHint="#535353"
-                                android:text="Salida"/>
-                        </FrameLayout>
-                    </LinearLayout>
+                                android:layout_height="70dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="#fff"
-                        android:layout_marginTop="4dp"
-                        android:elevation="2dp">
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="15dp"
+                                    android:hint="Origen"
+                                    android:textSize="16dp"
+                                    android:background="@color/colorPrimary"
+                                    android:id="@+id/edtOrigen"
+                                    android:inputType="textEmailAddress"
+                                    app:met_clearButton="true"
+                                    app:met_floatingLabel="highlight"
+                                    app:met_textColorHint="@color/colorPrimary"
+                                    app:met_baseColor="@color/colorPrimary"
+                                    app:met_primaryColor="@color/colorPrimary"
+                                    app:met_errorColor="@color/colorPrimary"/>
+                            </FrameLayout>
+                        </LinearLayout>
 
-                        <FrameLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="70dp">
-                            <com.rengwuxian.materialedittext.MaterialEditText
-                                android:id="@+id/txt_Destino"
-                                android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@color/colorIcon"
+                            android:layout_marginTop="4dp">
+
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_marginTop="25dp"
-                                android:textSize="16dp"
-                                android:textColor="@color/textColorPrimary"
-                                android:paddingRight="30dp"
-                                android:hint="Destino"
-                                android:textColorHint="#535353"
-                                android:text="Destino"/>
-                        </FrameLayout>
+                                android:layout_height="70dp">
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Destino"
+                                    android:textSize="16dp"
+                                    android:paddingTop="15dp"
+                                    android:background="@color/colorPrimary"
+                                    android:id="@+id/edtDestino"
+                                    android:inputType="textEmailAddress"
+                                    app:met_clearButton="true"
+                                    app:met_floatingLabel="highlight"
+                                    app:met_textColorHint="@color/colorPrimary"
+                                    app:met_baseColor="@color/colorPrimary"
+                                    app:met_primaryColor="@color/colorPrimary"
+                                    app:met_errorColor="@color/colorPrimary"/>
+                            </FrameLayout>
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:layout_marginTop="5dp"
-                android:elevation="2dp"
-                android:id="@+id/calendarButton"
-                android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Elegir fecha"
-                        android:textSize="20dp"
-                        android:layout_marginLeft="25dp"
-                        android:paddingTop="10dp" />
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="5"
-                        android:layout_gravity="right"
-                        android:src="@drawable/ic_arrow_drop_down_black_48dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
-                <TextView
-                    android:id="@+id/txtDate"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fecha"
-                    android:textSize="30dp"
-                    android:gravity="center"
-                    android:drawableLeft="@drawable/ic_date_range_blue_grey_500_48dp"/>
-            </LinearLayout>
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorIcon"
+                    android:layout_marginTop="20dp"
+                    android:elevation="2dp"
+                    android:id="@+id/calendarButton"
+                    android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:layout_marginTop="5dp"
-                android:elevation="2dp"
-                android:id="@+id/hourButton"
-                android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" Fecha: "
+                            android:textSize="20dp"
+                            android:textColor="@color/colorPrimary"
+                            android:paddingTop="10dp"
+                            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                            android:id="@+id/textView" />
+                    </LinearLayout>
 
-                <TextView
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/txtDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="10dp"
+                            android:hint="Elegir fecha"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Elegir hora"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="25dp"
-                    android:paddingTop="10dp" />
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorIcon"
+                    android:layout_marginTop="15dp"
+                    android:elevation="2dp"
+                    android:orientation="horizontal">
 
-                <ImageView
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="   Hora: "
+                            android:textSize="20dp"
+                            android:textColor="@color/colorPrimary"
+                            android:paddingTop="10dp"
+                            android:drawableLeft="@drawable/ic_access_time_24dp"
+                            android:id="@+id/textView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/txtHour"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Hora"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorPrimary"
+                            android:paddingTop="10dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="5"
-                    android:layout_gravity="right"
-                    android:src="@drawable/ic_arrow_drop_down_black_48dp"/>
-            </LinearLayout>
+                    android:background="@color/colorPrimary"
+                    android:layout_marginTop="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="25dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
-                <TextView
-                    android:id="@+id/txtHour"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Hora"
-                    android:textSize="30dp"
-                    android:gravity="center"
-                    android:drawableLeft="@drawable/ic_access_time_blue_500_48dp"/>
-            </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="0dp">
+                            <android.support.design.widget.FloatingActionButton
+                                android:id="@+id/btnBuscar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25dp"
+                                android:background="@color/colorAcept"
+                                android:src="@drawable/ic_search_24dp"
+                                app:elevation="4dp"
+                                android:translationY="-20dp"
+                                android:translationZ="222dp"/>
+                        </LinearLayout>
+                    </RelativeLayout>
 
-            <Button
-                android:id="@+id/btnBuscar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="25dp"
-                android:background="@color/colorAcept"
-                android:textColor="#ffffff"
-                android:textAllCaps="false"
-                android:layout_marginLeft="100dp"
-                android:layout_marginRight="100dp"
-                android:text="Buscar"
-                android:layout_marginTop="20dp"
-                android:elevation="2dp"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 

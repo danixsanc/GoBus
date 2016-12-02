@@ -9,105 +9,185 @@
         android:layout_height="wrap_content"
         android:background="#efefef"
         android:elevation="2dp"
-        android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="30dp">
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_gravity="center">
 
             <ImageView
                 android:id="@+id/list_row_image"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
                 android:src="@drawable/ic_directions_bus_red_600_48dp"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="20dp"
-                    android:textColor="@color/textColorPrimary"
-                    android:gravity="center_vertical"
-                    android:text="Linea:"
-                    android:layout_weight=".1"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12sp"
-                    android:textColor="@color/textColorPrimary"
-                    android:gravity="center_vertical"
-                    android:text="Disponibilidad:"
-                    android:layout_weight=".1"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12sp"
-                    android:textColor="@color/textColorPrimary"
-                    android:gravity="center_vertical"
-                    android:text="Salida:"
-                    android:layout_weight=".1"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:layout_height="match_parent"
+                android:background="@color/colorIcon"
+                android:alpha="0.1"></LinearLayout>
+ma
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtLinea"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="20dp"
-                    android:textColor="@color/textColorPrimary"
-                    android:gravity="center_vertical"
-                    android:text="Linea de autobus"
-                    android:layout_weight=".1"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtHora"
+                                android:textSize="20sp"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/textColorRow"
+                                android:gravity="center_vertical"
+                                android:text="Hora"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txtDisponibilidad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12sp"
-                    android:textColor="@color/textColorPrimary"
-                    android:gravity="center_vertical"
-                    android:text="Disponibilidad"
-                    android:layout_weight=".1"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
 
-                <TextView
-                    android:id="@+id/txtSalida"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12sp"
-                    android:textColor="@color/textColorPrimary"
-                    android:gravity="center_vertical"
-                    android:text="Salida"
-                    android:layout_weight=".1"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtTiempo"
+                                android:textSize="20sp"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/textColorRow2"
+                                android:gravity="center_vertical"
+                                android:text="Tiempo"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            </LinearLayout>
 
-        </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtPrecio"
+                                android:textSize="20sp"
+                                android:textColor="@color/textColorRow"
+                                android:gravity="center_vertical"
+                                android:text="Precio"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtSalida"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/textColorRow2"
+                                android:gravity="center_vertical"
+                                android:text="Salida"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtLinea"
+                                android:textSize="16sp"
+                                android:textColor="@color/textColorRow2"
+                                android:gravity="center_vertical"
+                                android:text="Linea"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_directions_bus_black_24dp"/>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtDestino"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/textColorRow2"
+                                android:gravity="center_vertical"
+                                android:text="Destino"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtDisponibilidad"
+                                android:textSize="16sp"
+                                android:textColor="@color/textColorRow2"
+                                android:gravity="center_vertical"
+                                android:text="Numero"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtAsientos"
+                                android:textSize="16sp"
+                                android:textColor="@color/textColorRow2"
+                                android:gravity="center_vertical"
+                                android:text=" Asientos"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+        </FrameLayout>
     </LinearLayout>
-
-
 </RelativeLayout>

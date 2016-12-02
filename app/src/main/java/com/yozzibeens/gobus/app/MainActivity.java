@@ -2,6 +2,8 @@ package com.yozzibeens.gobus.app;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private LinearLayout calendarButton, hourButton;
     private TextView txtDate, txtHour;
-    private TextView btnBuscar;
+    private FloatingActionButton btnBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setBackgroundColor(getResources().getColor(R.color.toolbarTransparent));
+        //toolbar.setTitleTextColor(getResources().getColor(R.color.colorPrimary));
+
+        //Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
         mDrawerMenu = (DrawerMenu) getSupportFragmentManager().findFragmentById(R.id.left_drawer);
         mDrawerMenu.setUp(R.id.left_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar, getSupportActionBar(), this);
@@ -56,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements
         txtDate = (TextView) findViewById(R.id.txtDate);
         txtHour = (TextView) findViewById(R.id.txtHour);
 
-        btnBuscar = (TextView) findViewById(R.id.btnBuscar);
+        btnBuscar = (FloatingActionButton) findViewById(R.id.btnBuscar);
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        calendarButton=(LinearLayout) findViewById(R.id.calendarButton);
-        calendarButton.setOnClickListener(new View.OnClickListener() {
+        txtDate=(TextView) findViewById(R.id.txtDate);
+        txtDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
@@ -82,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        hourButton=(LinearLayout) findViewById(R.id.hourButton);
-        hourButton.setOnClickListener(new View.OnClickListener() {
+        txtHour=(TextView) findViewById(R.id.txtHour);
+        txtHour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
