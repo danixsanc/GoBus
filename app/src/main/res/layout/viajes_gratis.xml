@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="30dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:id="@+id/imgCode"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/code"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtComparteCodigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COMPARTE CON TUS AMIGOS TU CÓDIGO"
+            android:textAlignment="center"
+            android:textSize="11dp"/>
+
+        <TextView
+            android:id="@+id/txtCodigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CODIGO"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/colorIcon"/>
+
+        <TextView
+            android:id="@+id/txtMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Comparte tu código y regala un viaje\ngratis a tus amigos en GoBus. Podrás obtener el 5%\nde los kilometros que recorra en su viaje gratis"/>
+
+        <TextView
+            android:id="@+id/txtDetalles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detalles"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorIcon"/>
+
+    </LinearLayout>
+
+</LinearLayout>

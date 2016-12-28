@@ -30,6 +30,12 @@
             android:screenOrientation="locked"></activity>
 
         <activity
+            android:label="Viajes Gratis"
+            android:name=".actividades.ViajesGratis"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
+        <activity
             android:label="Resultados"
             android:name=".actividades.Resultados"
             android:windowSoftInputMode="stateHidden"

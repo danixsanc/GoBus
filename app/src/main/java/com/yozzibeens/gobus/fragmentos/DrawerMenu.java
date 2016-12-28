@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.yozzibeens.gobus.R;
 import com.yozzibeens.gobus.actividades.Perfil.Nav_Perfil;
+import com.yozzibeens.gobus.actividades.ViajesGratis;
 //import com.yozzibeens.gobus.utilerias.Preferencias;
 
 /**
@@ -183,6 +184,15 @@ public class DrawerMenu extends Fragment {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(getActivity(), Nav_Perfil.class));
+                }
+            });
+
+            LinearLayout viajesGratis;
+            viajesGratis = (LinearLayout) view.findViewById(R.id.nav_viajesGratis);
+            viajesGratis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), ViajesGratis.class));
                 }
             });
 
