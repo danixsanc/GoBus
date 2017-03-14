@@ -53,6 +53,18 @@
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="locked"></activity>
 
+        <activity
+            android:label="Datos del Pasajero"
+            android:name=".actividades.DatosPasajero"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
+        <activity
+            android:label="Metodo de pago"
+            android:name=".actividades.MetodoPago"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
     </application>
 
 </manifest>

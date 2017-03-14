@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<ScrollView
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -83,16 +92,62 @@
                android:background="#e6e4e4"
                android:orientation="vertical">
 
-               <LinearLayout
+               <RelativeLayout
                    android:layout_width="wrap_content"
-                   android:layout_height="match_parent">
-                   <ImageView
-                       android:layout_width="50dp"
-                       android:layout_height="60dp"
-                       android:src="@drawable/asiento"
-                       android:layout_marginLeft="3dp"
-                       android:layout_marginBottom="5dp"/>
-               </LinearLayout>
+                   android:layout_height="wrap_content">
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent">
+                       <ImageView
+                           android:layout_width="50dp"
+                           android:layout_height="60dp"
+                           android:src="@drawable/asiento"
+                           android:layout_marginLeft="3dp"
+                           android:layout_marginBottom="25dp"/>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_alignParentRight="true"
+                           android:layout_marginTop="15dp"
+                           android:layout_marginLeft="90dp">
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/btnMenos">
+                               <ImageView
+                                   android:layout_width="40dp"
+                                   android:layout_height="40dp"
+                                   android:src="@drawable/ic_remove_circle_black_24dp"/>
+                           </LinearLayout>
+
+                           <TextView
+                               android:layout_width="25dp"
+                               android:layout_height="25dp"
+                               android:id="@+id/txtNumAsientos"
+                               android:text="0"
+                               android:textSize="22dp"
+                               android:layout_margin="5dp"
+                               android:gravity="center"/>
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/btnMas">
+                               <ImageView
+                                   android:layout_width="40dp"
+                                   android:layout_height="40dp"
+                                   android:src="@drawable/ic_add_circle_black_24dp"/>
+                           </LinearLayout>
+
+                       </LinearLayout>
+                   </LinearLayout>
+
+
+               </RelativeLayout>
+
+
 
                <RelativeLayout
                    android:layout_width="wrap_content"
@@ -409,9 +464,7 @@
                            </LinearLayout>
 
                        </LinearLayout>
-
                    </LinearLayout>
-
 
                    <LinearLayout
                        android:layout_width="wrap_content"
@@ -735,3 +788,16 @@
     </LinearLayout>
 
 </ScrollView>
+
+</LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_shopping_cart_white_24dp"
+        android:translationY="440dp"
+        android:layout_below="@id/Principal"
+        android:layout_alignParentRight="true"
+        android:translationX="-130dp"
+        android:layout_marginRight="20dp"/>
+</RelativeLayout>

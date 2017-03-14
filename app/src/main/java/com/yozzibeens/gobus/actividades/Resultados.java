@@ -11,17 +11,21 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.yozzibeens.gobus.R;
 import com.yozzibeens.gobus.adaptadores.AdaptadorAutobuses;
+import com.yozzibeens.gobus.app.MainActivity;
 
 import java.util.ArrayList;
 
@@ -33,6 +37,8 @@ public class Resultados extends AppCompatActivity {
 
     private AutobusesAdapter autobusesAdapter;
     private ListView autobusesList;
+    private Button btnContinuar;
+    //private LinearLayout ticket;
     ArrayList<AdaptadorAutobuses> autobusesArray = new ArrayList<AdaptadorAutobuses>();
     Typeface RobotoCondensed_Bold, RobotoCondensed_Regular;
 
@@ -60,6 +66,23 @@ public class Resultados extends AppCompatActivity {
         autobusesList = (ListView) findViewById(R.id.listView);
         autobusesList.setItemsCanFocus(false);
         autobusesList.setAdapter(autobusesAdapter);
+
+        /*ticket = (LinearLayout) findViewById(R.id.ticket);
+        ticket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Resultados.this, Selecciona_Asiento.class));
+            }
+        });*/
+
+        btnContinuar = (Button) findViewById(R.id.btnContinuar);
+        btnContinuar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Resultados.this, Selecciona_Asiento.class));
+            }
+        });
+
     }
 
     public class AutobusesAdapter extends ArrayAdapter<AdaptadorAutobuses> {
@@ -152,6 +175,7 @@ public class Resultados extends AppCompatActivity {
             TextView txtHora;
             TextView txtPrecio;
             TextView txtTiempo;
+            Button btnShop;
         }
     }
 }
