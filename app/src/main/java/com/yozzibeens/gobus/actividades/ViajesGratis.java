@@ -27,8 +27,6 @@ public class ViajesGratis extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //toolbar.getBackground().setAlpha(0);
-        //toolbar.setTitleTextColor(getResources().getColor(R.color.colorPrimary));
 
         Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
@@ -41,5 +39,6 @@ public class ViajesGratis extends AppCompatActivity {
         txtDetalles = (TextView) findViewById(R.id.txtDetalles);
         txtDetalles.setTypeface(RobotoCondensed_Regular);
 
+        txtCodigo.setText("yb123");
     }
 }

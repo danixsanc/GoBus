@@ -186,6 +186,7 @@
                             android:layout_weight="1"
                             android:paddingTop="10dp"
                             android:hint="Elegir fecha"
+                            android:textColorHint="@color/colorPrimary"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20dp"/>
                     </LinearLayout>
@@ -224,8 +225,9 @@
                             android:id="@+id/txtHour"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Hora"
+                            android:hint="Elegir hora"
                             android:textSize="20dp"
+                            android:textColorHint="@color/colorPrimary"
                             android:textColor="@color/colorPrimary"
                             android:paddingTop="10dp"/>
                     </LinearLayout>

@@ -30,14 +30,26 @@
             android:screenOrientation="locked"></activity>
 
         <activity
-            android:label="Viajes Gratis"
-            android:name=".actividades.ViajesGratis"
+        android:label="Viajes Gratis"
+        android:name=".actividades.ViajesGratis"
+        android:windowSoftInputMode="stateHidden"
+        android:screenOrientation="locked"></activity>
+
+        <activity
+            android:label="Promociones"
+            android:name=".actividades.Promociones"
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="locked"></activity>
 
         <activity
             android:label="Resultados"
             android:name=".actividades.Resultados"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
+        <activity
+            android:label="Selecciona tu asiento"
+            android:name=".actividades.Selecciona_Asiento"
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="locked"></activity>
 
