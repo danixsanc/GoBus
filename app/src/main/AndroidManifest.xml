@@ -65,6 +65,12 @@
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="locked"></activity>
 
+        <activity
+            android:label="Ticket"
+            android:name=".actividades.FinalTicket"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
     </application>
 
 </manifest>

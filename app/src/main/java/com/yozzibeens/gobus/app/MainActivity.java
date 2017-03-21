@@ -11,14 +11,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.rengwuxian.materialedittext.MaterialEditText;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.date.MonthAdapter;
 import com.yozzibeens.gobus.R;
+import com.yozzibeens.gobus.actividades.FinalTicket;
 import com.yozzibeens.gobus.actividades.Resultados;
+import com.yozzibeens.gobus.adaptadores.AdaptadorAutobuses;
 import com.yozzibeens.gobus.fragmentos.DrawerMenu;
 
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
@@ -27,8 +31,10 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.StringTokenizer;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -44,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements
     private TextView txtDate, txtHour;
     private FloatingActionButton btnBuscar;
     private ImageView imgCity;
+    MaterialEditText edtOrigen,edtDestino;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +61,6 @@ public class MainActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
         mDrawerMenu = (DrawerMenu) getSupportFragmentManager().findFragmentById(R.id.left_drawer);
         mDrawerMenu.setUp(R.id.left_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar, getSupportActionBar(), this);
@@ -62,11 +68,14 @@ public class MainActivity extends AppCompatActivity implements
         txtDate = (TextView) findViewById(R.id.txtDate);
         txtHour = (TextView) findViewById(R.id.txtHour);
 
+        edtDestino = (MaterialEditText) findViewById(R.id.edtDestino);
+        edtOrigen = (MaterialEditText) findViewById(R.id.edtOrigen);
+
         btnBuscar = (FloatingActionButton) findViewById(R.id.btnBuscar);
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Resultados.class));
+                verificaDatos();
             }
         });
 
@@ -107,7 +116,52 @@ public class MainActivity extends AppCompatActivity implements
         imgCity = (ImageView) findViewById(R.id.imgCity);
         imgCity.setAlpha(35);
 
+    }
+
+    public void verificaDatos()
+    {
+
+        if(edtOrigen.getText().toString().isEmpty())
+        {
+            SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+            dialog.setTitleText("Escoja su origen!").show();
         }
+        else
+            if(edtDestino.getText().toString().isEmpty())
+            {
+                SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                dialog.setTitleText("Escoja su destino!").show();
+            }
+            else
+                if(txtDate.getText().equals(""))
+                {
+                    SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                    dialog.setTitleText("Escoja la fecha!").show();
+                }
+                else
+                    if(txtHour.getText().equals(""))
+                    {
+                        SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+                        dialog.setTitleText("Escoja la hora!").show();
+                    }
+                    else
+                    {
+                        String origen = edtOrigen.getText().toString();
+                        String destino = edtDestino.getText().toString();
+                        String hora = txtHour.getText().toString();
+                        String fecha = txtDate.getText().toString();
+
+                        Intent intent=new Intent(this, Resultados.class);
+                        intent.putExtra("origen",origen);
+                        intent.putExtra("destino",destino);
+                        intent.putExtra("hora",hora);
+                        intent.putExtra("fecha",fecha);
+                        startActivity(intent);
+
+                        //startActivity(new Intent(MainActivity.this, Resultados.class));
+                    }
+
+    }
 
     @Override
     public void onClick(View v) {

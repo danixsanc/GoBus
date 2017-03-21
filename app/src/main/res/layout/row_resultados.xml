@@ -20,7 +20,8 @@
             android:layout_height="match_parent"
             android:padding="10dp"
             android:gravity="center"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:elevation="2dp">
 
             <ImageView
                 android:id="@+id/list_row_image"
@@ -42,7 +43,10 @@ ma
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/ticket"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:elevation="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -88,7 +92,7 @@ ma
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true">
-                            <TextView
+                            <!--<TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:id="@+id/txtPrecio"
@@ -97,7 +101,7 @@ ma
                                 android:gravity="center_vertical"
                                 android:text="Precio"
                                 android:layout_weight=".1"
-                                android:textAppearance="?android:attr/textAppearanceLarge" />
+                                android:textAppearance="?android:attr/textAppearanceLarge" />-->
                         </LinearLayout>
                     </RelativeLayout>
 
@@ -185,6 +189,43 @@ ma
                                 android:text=" Asientos"
                                 android:layout_weight=".1"
                                 android:textAppearance="?android:attr/textAppearanceLarge" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorBorder"
+                        android:layout_marginBottom="5dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/txtPrecio"
+                                android:textSize="20dp"
+                                android:textColor="@color/textColorRow2"
+                                android:gravity="center_vertical"
+                                android:text="Precio"
+                                android:layout_weight=".1"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:layout_marginTop="20dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                            <at.markushi.ui.CircleButton
+                                android:id="@+id/btnShop"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_shopping_cart_white_24dp"
+                                android:layout_marginRight="30dp"
+                                app:cb_color="@color/colorAccent"
+                                app:cb_pressedRingWidth="8dp"/>
                         </LinearLayout>
 
                     </RelativeLayout>

@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.rengwuxian.materialedittext.MaterialEditText;
 import com.yozzibeens.gobus.R;
 import com.yozzibeens.gobus.adaptadores.AdaptadorAutobuses;
 import com.yozzibeens.gobus.app.MainActivity;
@@ -38,9 +39,10 @@ public class Resultados extends AppCompatActivity {
     private AutobusesAdapter autobusesAdapter;
     private ListView autobusesList;
     private Button btnContinuar;
-    //private LinearLayout ticket;
     ArrayList<AdaptadorAutobuses> autobusesArray = new ArrayList<AdaptadorAutobuses>();
     Typeface RobotoCondensed_Bold, RobotoCondensed_Regular;
+
+    String origen, destino, hora, fecha;
 
 
     @Override
@@ -48,42 +50,49 @@ public class Resultados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultados);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         RobotoCondensed_Bold = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Bold.ttf");
         RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
-
-        autobusesArray.add(new AdaptadorAutobuses("TAP", "3", "Terminal Culiacán","Terminal Mazatlán","08:00 am","4:00 Hrs","$110", getResources().getDrawable(R.drawable.tap)));
-        autobusesArray.add(new AdaptadorAutobuses("Tufesa", "6", "Terminal Tijuana","Terminal Mochis", "08:00 am","15:30 Hrs","$740",getResources().getDrawable(R.drawable.tufesa)));
-        autobusesArray.add(new AdaptadorAutobuses("AUS", "2", "Terminal Mochis","Terminal Culiacan", "08:00 am","3:10 Hrs","$140",getResources().getDrawable(R.drawable.aus)));
-        autobusesArray.add(new AdaptadorAutobuses("TAP", "5", "Terminal Obregón","Terminal Mazatlán","08:00 am","8:00 Hrs","$650",getResources().getDrawable(R.drawable.tap)));
-        autobusesArray.add(new AdaptadorAutobuses("AUS", "3", "Terminal Guasave","Terminal Culiacán","08:00 am","2:00 Hrs","$115",getResources().getDrawable(R.drawable.aus)));
-        autobusesArray.add(new AdaptadorAutobuses("Tufesa", "7", "Terminal Mochis","Terminal Mazatlán","08:00 am","6:15 Hrs","$200",getResources().getDrawable(R.drawable.tufesa)));
 
         autobusesAdapter = new AutobusesAdapter(getApplicationContext(), R.layout.row_resultados, autobusesArray);
         autobusesList = (ListView) findViewById(R.id.listView);
         autobusesList.setItemsCanFocus(false);
         autobusesList.setAdapter(autobusesAdapter);
 
-        /*ticket = (LinearLayout) findViewById(R.id.ticket);
-        ticket.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Resultados.this, Selecciona_Asiento.class));
-            }
-        });*/
+        try
+        {
+            Bundle extras = getIntent().getExtras();
+            origen= extras.getString("origen");
+            destino = extras.getString("destino");
+            hora = extras.getString("hora");
+            fecha = extras.getString("fecha");
+        }
+        catch (Exception e){
 
-        btnContinuar = (Button) findViewById(R.id.btnContinuar);
-        btnContinuar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Resultados.this, Selecciona_Asiento.class));
-            }
-        });
+        }
+
+        autobusesArray.add(new AdaptadorAutobuses("TAP", "3"    , origen, destino, hora,"4:00 Hrs","$110", getResources().getDrawable(R.drawable.tap)));
+        autobusesArray.add(new AdaptadorAutobuses("Tufesa", "6" , origen, destino, hora,"15:30 Hrs","$740",getResources().getDrawable(R.drawable.tufesa)));
+        autobusesArray.add(new AdaptadorAutobuses("AUS", "2"    , origen, destino, hora,"3:10 Hrs","$140",getResources().getDrawable(R.drawable.aus)));
+        autobusesArray.add(new AdaptadorAutobuses("TAP", "5"    , origen, destino, hora,"8:00 Hrs","$650",getResources().getDrawable(R.drawable.tap)));
+        autobusesArray.add(new AdaptadorAutobuses("AUS", "3"    , origen, destino, hora,"2:00 Hrs","$115",getResources().getDrawable(R.drawable.aus)));
+        autobusesArray.add(new AdaptadorAutobuses("Tufesa", "7" , origen, destino, hora,"6:15 Hrs","$200",getResources().getDrawable(R.drawable.tufesa)));
+
 
     }
+
+    public void enviaDatos(){
+        Intent intent=new Intent(this, Selecciona_Asiento.class);
+        intent.putExtra("origen",origen);
+        intent.putExtra("destino",destino);
+        intent.putExtra("hora",hora);
+        intent.putExtra("fecha",fecha);
+        startActivity(intent);
+    }
+
 
     public class AutobusesAdapter extends ArrayAdapter<AdaptadorAutobuses> {
         Context context;
@@ -129,6 +138,16 @@ public class Resultados extends AppCompatActivity {
                 holder.Fondo = (ImageView) row.findViewById(R.id.list_row_image);
                 holder.Fondo.setAlpha(25);
                 //holder.btnDelete = (ImageButton) row.findViewById(R.id.button2);
+
+                holder.btnShop = (ImageView) row.findViewById(R.id.btnShop);
+                holder.btnShop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        enviaDatos();
+                        Resultados.this.finish();
+                    }
+                });
+
                 row.setTag(holder);
 
                 final UserHolder finalHolder = holder;
@@ -175,7 +194,7 @@ public class Resultados extends AppCompatActivity {
             TextView txtHora;
             TextView txtPrecio;
             TextView txtTiempo;
-            Button btnShop;
+            ImageView btnShop;
         }
     }
 }

@@ -1,803 +1,847 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-<ScrollView
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <include layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ScrollView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/colorIcon">
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Libre"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center_vertical"
+                                android:layout_weight=".1"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+                            <LinearLayout
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="#262626">
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ocupado"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center_vertical"
+                                android:layout_weight=".1"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+                            <LinearLayout
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/colorAccent">
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Seleccionado"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center_vertical"
+                                android:layout_weight=".1"/>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#f5f9ff"
+                        android:orientation="vertical"
+                        android:elevation="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="60dp"
+                                    android:src="@drawable/asiento"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_marginBottom="25dp"/>
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento1"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="1"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento2"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="2"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento5"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="5"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento6"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="6"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento9"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="9"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento10"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="10"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento13"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="13"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento14"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="14"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento17"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="17"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento18"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="18"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento21"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="21"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento22"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="22"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento25"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="25"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento26"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="26"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento29"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="29"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento30"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="30"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento33"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="33"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento34"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="34"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_alignParentRight="true">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento3"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="3"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento4"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="4"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento7"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="7"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento8"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="8"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento11"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="11"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento12"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento15"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="15"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento16"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="16"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento19"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="19"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento20"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="20"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento23"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="23"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento24"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="24"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento27"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="27"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento28"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="28"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento31"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="31"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento32"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="32"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento35"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="35"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:id="@+id/asiento36"
+                                        android:background="@color/colorIcon"
+                                        android:layout_margin="5dp"
+                                        android:gravity="center">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="36"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp">
-
+            android:id="@+id/segundo"
+            android:layout_weight="0.1">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:background="@color/colorIcon">
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Libre"
-                        android:layout_marginLeft="5dp"
-                        android:gravity="center_vertical"
-                        android:layout_weight=".1"/>
-                </LinearLayout>
+                android:background="@color/colorBorder">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true">
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:background="#262626">
-                    </LinearLayout>
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ocupado"
-                        android:layout_marginLeft="5dp"
-                        android:gravity="center_vertical"
-                        android:layout_weight=".1"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Numero de Asientos"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginLeft="10dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/btnMenos">
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_remove_circle_black_24dp"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:id="@+id/txtNumAsientos"
+                                android:text="0"
+                                android:textSize="22dp"
+                                android:layout_margin="5dp"
+                                android:gravity="center"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/btnMas">
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_add_circle_black_24dp"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true">
-                    <LinearLayout
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:background="@color/colorAccent">
-                    </LinearLayout>
-                    <TextView
+                    <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Seleccionado"
-                        android:layout_marginLeft="5dp"
-                        android:gravity="center_vertical"
-                        android:layout_weight=".1"/>
+                        android:id="@+id/btnSig"
+                        android:text="Comprar"
+                        android:textColor="@color/mdtp_white"
+                        android:background="@drawable/round_corner"
+                        android:backgroundTint="@color/colorAccent"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="15dp"/>
                 </LinearLayout>
-
             </RelativeLayout>
-
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:background="#e6e4e4"
-               android:orientation="vertical">
-
-               <RelativeLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content">
-                   <LinearLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="match_parent">
-                       <ImageView
-                           android:layout_width="50dp"
-                           android:layout_height="60dp"
-                           android:src="@drawable/asiento"
-                           android:layout_marginLeft="3dp"
-                           android:layout_marginBottom="25dp"/>
-
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-                           android:layout_alignParentRight="true"
-                           android:layout_marginTop="15dp"
-                           android:layout_marginLeft="90dp">
-
-                           <LinearLayout
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:id="@+id/btnMenos">
-                               <ImageView
-                                   android:layout_width="40dp"
-                                   android:layout_height="40dp"
-                                   android:src="@drawable/ic_remove_circle_black_24dp"/>
-                           </LinearLayout>
-
-                           <TextView
-                               android:layout_width="25dp"
-                               android:layout_height="25dp"
-                               android:id="@+id/txtNumAsientos"
-                               android:text="0"
-                               android:textSize="22dp"
-                               android:layout_margin="5dp"
-                               android:gravity="center"/>
-
-                           <LinearLayout
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:id="@+id/btnMas">
-                               <ImageView
-                                   android:layout_width="40dp"
-                                   android:layout_height="40dp"
-                                   android:src="@drawable/ic_add_circle_black_24dp"/>
-                           </LinearLayout>
-
-                       </LinearLayout>
-                   </LinearLayout>
-
-
-               </RelativeLayout>
-
-
-
-               <RelativeLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content">
-
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:orientation="vertical">
-
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento1"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="1"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento2"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="2"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento5"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="5"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento6"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="6"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento9"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="9"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento10"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="10"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento13"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="13"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento14"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="14"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento17"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="17"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento18"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="18"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento21"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="21"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento22"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="22"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento25"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="25"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento26"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="26"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento29"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="29"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento30"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="30"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento33"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="33"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento34"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="34"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                   </LinearLayout>
-
-                   <LinearLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:orientation="vertical"
-                       android:layout_alignParentRight="true">
-
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento3"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="3"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento4"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="4"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento7"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="7"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento8"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="8"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento11"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="11"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento12"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="12"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento15"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="15"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento16"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="16"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento19"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="19"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento20"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="20"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento23"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="23"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento24"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="24"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento27"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="27"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento28"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="28"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento31"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="31"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento32"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="32"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                       <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="horizontal">
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento35"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="35"/>
-
-                           </LinearLayout>
-
-                           <LinearLayout
-                               android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:id="@+id/asiento36"
-                               android:background="@color/colorIcon"
-                               android:layout_margin="5dp"
-                               android:gravity="center">
-                               <TextView
-                                   android:layout_width="wrap_content"
-                                   android:layout_height="wrap_content"
-                                   android:text="36"/>
-
-                           </LinearLayout>
-
-                       </LinearLayout>
-                   </LinearLayout>
-
-               </RelativeLayout>
-           </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 
-</ScrollView>
-
 </LinearLayout>
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnSig"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_shopping_cart_white_24dp"
-        android:translationY="440dp"
-        android:layout_below="@id/Principal"
-        android:layout_alignParentRight="true"
-        android:translationX="-130dp"
-        android:layout_marginRight="20dp"/>
-</RelativeLayout>

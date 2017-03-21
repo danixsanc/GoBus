@@ -8,8 +8,10 @@ import android.graphics.drawable.PaintDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,20 +32,37 @@ public class Selecciona_Asiento extends AppCompatActivity
     private TextView txtNumAsientos;
     private LinearLayout btnMenos, btnMas;
     private int cont=0;
-    private FloatingActionButton btnSig;
+    private Button btnSig;
+    private String origen, destino, hora, fecha;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selecciona_asiento);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        try
+        {
+            Bundle extras = getIntent().getExtras();
+            origen= extras.getString("origen");
+            destino = extras.getString("destino");
+            hora = extras.getString("hora");
+            fecha = extras.getString("fecha");
+        }
+        catch (Exception e){
+
+        }
+
         txtNumAsientos = (TextView) findViewById(R.id.txtNumAsientos);
         txtNumAsientos.setText(Integer.toString(cont));
 
-        btnSig = (FloatingActionButton) findViewById(R.id.btnSig);
+        btnSig = (Button) findViewById(R.id.btnSig);
         btnSig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Selecciona_Asiento.this, DatosPasajero.class));
+                enviaDatos();
             }
         });
 
@@ -307,5 +326,14 @@ public class Selecciona_Asiento extends AppCompatActivity
 
 
 
+    }
+
+    public void enviaDatos(){
+        Intent intent=new Intent(this, DatosPasajero.class);
+        intent.putExtra("origen",origen);
+        intent.putExtra("destino",destino);
+        intent.putExtra("hora",hora);
+        intent.putExtra("fecha",fecha);
+        startActivity(intent);
     }
 }

@@ -6,13 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/toolbar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#f5f9ff"
+        android:padding="20dp"
+        android:elevation="2dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,20 +27,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
-                    android:hint="Nombre"
                     android:textSize="16dp"
                     android:background="@color/colorPrimary"
-                    android:id="@+id/edtNombre"
+                    android:id="@+id/edtNombrePas"
                     android:inputType="textEmailAddress"
                     app:met_clearButton="true"
                     app:met_floatingLabel="highlight"
                     app:met_textColorHint="@color/mdtp_ampm_text_color"
                     app:met_baseColor="@color/mdtp_ampm_text_color"
-                    app:met_primaryColor="@color/mdtp_ampm_text_color"
+                    app:met_primaryColor="@color/mdtp_line_dark"
                     app:met_errorColor="@color/mdtp_ampm_text_color"/>
             </FrameLayout>
         </LinearLayout>
@@ -49,20 +57,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Apellidos"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
-                    android:hint="Apellidos"
                     android:textSize="16dp"
                     android:background="@color/colorPrimary"
-                    android:id="@+id/edtApellido"
+                    android:id="@+id/edtApellidoPas"
                     android:inputType="textEmailAddress"
                     app:met_clearButton="true"
                     app:met_floatingLabel="highlight"
                     app:met_textColorHint="@color/mdtp_ampm_text_color"
                     app:met_baseColor="@color/mdtp_ampm_text_color"
-                    app:met_primaryColor="@color/mdtp_ampm_text_color"
+                    app:met_primaryColor="@color/mdtp_line_dark"
                     app:met_errorColor="@color/mdtp_ampm_text_color"/>
             </FrameLayout>
         </LinearLayout>
@@ -75,32 +86,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edad:"
-                android:textSize="20dp"/>
+                android:textSize="15dp"/>
 
-            <android.support.design.widget.TextInputEditText
-                android:layout_width="wrap_content"
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 app:met_floatingLabel="highlight"
+                android:inputType="numberDecimal"
+                app:met_textColorHint="@color/mdtp_ampm_text_color"
                 app:met_baseColor="@color/mdtp_ampm_text_color"
-                android:hint="0"/>
+                app:met_primaryColor="@color/mdtp_line_dark"
+                app:met_errorColor="@color/mdtp_ampm_text_color"/>
         </LinearLayout>
 
 
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/btnPagar"
-            android:layout_marginTop="20dp"
-            android:text="Pagar"
-            android:textColor="@color/mdtp_white"
-            android:background="@color/colorAccent"/>
-
     </LinearLayout>
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/btnPagar"
+        android:layout_marginTop="40dp"
+        android:text="Pagar"
+        android:textSize="15dp"
+        android:textColor="@color/mdtp_white"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/colorAccent"
+        android:elevation="2dp"/>
 
 </LinearLayout>

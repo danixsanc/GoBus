@@ -111,7 +111,7 @@
                                     android:textSize="16dp"
                                     android:background="@color/colorPrimary"
                                     android:id="@+id/edtOrigen"
-                                    android:inputType="textEmailAddress"
+                                    android:inputType="textAutoComplete"
                                     app:met_clearButton="true"
                                     app:met_floatingLabel="highlight"
                                     app:met_textColorHint="@color/colorPrimary"
@@ -139,7 +139,7 @@
                                     android:paddingTop="15dp"
                                     android:background="@color/colorPrimary"
                                     android:id="@+id/edtDestino"
-                                    android:inputType="textEmailAddress"
+                                    android:inputType="textAutoComplete"
                                     app:met_clearButton="true"
                                     app:met_floatingLabel="highlight"
                                     app:met_textColorHint="@color/colorPrimary"
@@ -157,22 +157,25 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="10dp"
                     android:background="@color/colorIcon"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="40dp"
                     android:id="@+id/calendarButton"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_date_range_black_24dp"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text=" Fecha: "
-                            android:textSize="20dp"
+                            android:textSize="18dp"
                             android:textColor="@color/colorPrimary"
-                            android:paddingTop="10dp"
-                            android:drawableLeft="@drawable/ic_date_range_black_24dp"
                             android:id="@+id/textView" />
                     </LinearLayout>
 
@@ -184,11 +187,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingTop="10dp"
                             android:hint="Elegir fecha"
-                            android:textColorHint="@color/colorPrimary"
+                            android:textColorHint="#17bac2"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20dp"/>
+                            android:textSize="18dp"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -206,15 +208,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_access_time_24dp"/>
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="   Hora: "
-                            android:textSize="20dp"
+                            android:textSize="18dp"
                             android:textColor="@color/colorPrimary"
-                            android:paddingTop="10dp"
-                            android:drawableLeft="@drawable/ic_access_time_24dp"
                             android:id="@+id/textView2" />
                     </LinearLayout>
 
@@ -226,10 +231,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Elegir hora"
-                            android:textSize="20dp"
-                            android:textColorHint="@color/colorPrimary"
-                            android:textColor="@color/colorPrimary"
-                            android:paddingTop="10dp"/>
+                            android:textSize="18dp"
+                            android:textColorHint="#17bac2"
+                            android:textColor="@color/colorPrimary"/>
                     </LinearLayout>
 
                 </LinearLayout>
