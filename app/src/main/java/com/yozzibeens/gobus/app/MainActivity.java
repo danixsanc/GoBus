@@ -238,5 +238,20 @@ public class MainActivity extends AppCompatActivity implements
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        SweetAlertDialog dialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE);
+        dialog.setTitleText("¿Seguro que desea salir?")
+                .setConfirmText("Si")
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+                        finish();
+                    }
+                })
+                .setCancelText("No")
+                .show();
+    }
 }
 

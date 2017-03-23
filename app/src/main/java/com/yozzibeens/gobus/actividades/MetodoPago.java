@@ -46,6 +46,7 @@ public class MetodoPago extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 enviaDatos();
+                MetodoPago.this.finish();
             }
         });
     }

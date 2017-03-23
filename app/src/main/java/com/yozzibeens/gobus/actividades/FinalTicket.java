@@ -60,8 +60,18 @@ public class FinalTicket extends AppCompatActivity
         btnOkFinal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FinalTicket.this, MainActivity.class));
+                //enviaDatos();
+                //startActivity(new Intent(FinalTicket.this,MainActivity.class));
+                FinalTicket.this.finish();
             }
         });
+    }
+
+    public void enviaDatos(){
+        Intent intent=new Intent(this, MainActivity.class);
+        intent.putExtra("origen",origen);
+        intent.putExtra("destino",destino);
+        intent.putExtra("hora",hora);
+        intent.putExtra("fecha",fecha);
     }
 }

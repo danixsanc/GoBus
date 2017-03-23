@@ -53,6 +53,7 @@ public class DatosPasajero  extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 verificaDatos();
+                DatosPasajero.this.finish();
             }
         });
     }

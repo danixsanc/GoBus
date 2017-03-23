@@ -52,7 +52,8 @@ public class Nav_Perfil extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.getBackground().setAlpha(0);
+        //toolbar.getBackground().setAlpha(0);
+        toolbar.setBackgroundColor(getResources().getColor(R.color.colorIcon));
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorPrimary));
 
         Typeface RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
@@ -68,8 +69,6 @@ public class Nav_Perfil extends AppCompatActivity {
         txt_email.setTypeface(RobotoCondensed_Regular);
         txt_phone = (TextView) findViewById(R.id.txt_phone);
         txt_phone.setTypeface(RobotoCondensed_Regular);*/
-        txt_switch = (TextView) findViewById(R.id.txt_switch);
-        //txt_switch.setTypeface(RobotoCondensed_Regular);
 
         imgPerfilTaxista = (CircleImageView) findViewById(R.id.imgPerfilTaxista);
 

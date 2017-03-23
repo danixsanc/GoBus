@@ -18,6 +18,12 @@
         </activity>
 
         <activity
+            android:label="Login"
+            android:name=".app.Login"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
+        <activity
             android:label="Inicio"
             android:name=".app.MainActivity"
             android:windowSoftInputMode="stateHidden"
@@ -68,6 +74,12 @@
         <activity
             android:label="Ticket"
             android:name=".actividades.FinalTicket"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
+        <activity
+            android:label="Historial"
+            android:name=".actividades.Historial"
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="locked"></activity>
 

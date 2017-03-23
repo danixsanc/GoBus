@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yozzibeens.gobus.R;
+import com.yozzibeens.gobus.actividades.Historial;
 import com.yozzibeens.gobus.actividades.Perfil.Nav_Perfil;
 import com.yozzibeens.gobus.actividades.Promociones;
 import com.yozzibeens.gobus.actividades.ViajesGratis;
@@ -178,6 +179,15 @@ public class DrawerMenu extends Fragment {
                     mDrawerLayout.closeDrawers();
                 }
             });*/
+
+            LinearLayout historial;
+            historial = (LinearLayout) view.findViewById(R.id.nav_historial);
+            historial.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), Historial.class));
+                }
+            });
 
             LinearLayout perfil;
             perfil = (LinearLayout) view.findViewById(R.id.nav_perfil);

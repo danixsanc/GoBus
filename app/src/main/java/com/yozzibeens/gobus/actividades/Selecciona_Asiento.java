@@ -63,6 +63,7 @@ public class Selecciona_Asiento extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 enviaDatos();
+                Selecciona_Asiento.this.finish();
             }
         });
 
