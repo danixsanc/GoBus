@@ -53,7 +53,7 @@ public class DatosPasajero  extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 verificaDatos();
-                DatosPasajero.this.finish();
+
             }
         });
     }
@@ -83,6 +83,7 @@ public class DatosPasajero  extends AppCompatActivity
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("apellido",apellido);
                 startActivity(intent);
+                DatosPasajero.this.finish();
             }
 
     }
