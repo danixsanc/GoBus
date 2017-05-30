@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.yozzibeens.gobus.R;
+import com.yozzibeens.gobus.modelo.goBusDB;
 
 /**
  * Created by Antonio on 11/11/2016.
@@ -19,8 +21,8 @@ public class Splash extends Activity{
         setContentView(R.layout.splash);
 
 
-        /*RivosPartnerDB.initializeInstance();
-        GoogleCloudMessaging.getInstance(this);*/
+        goBusDB.initializeInstance();
+        GoogleCloudMessaging.getInstance(this);
 
         Thread timerThread = new Thread(){
             public void run(){

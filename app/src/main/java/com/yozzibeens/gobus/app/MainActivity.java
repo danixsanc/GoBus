@@ -1,9 +1,16 @@
 package com.yozzibeens.gobus.app;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +34,7 @@ import com.yozzibeens.gobus.fragmentos.DrawerMenu;
 
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
+import com.yozzibeens.gobus.utilerias.Preferencias;
 
 
 import java.text.ParseException;
@@ -52,18 +60,30 @@ public class MainActivity extends AppCompatActivity implements
     private ImageView imgCity;
     MaterialEditText edtOrigen,edtDestino;
 
+    Location locationf;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        final Preferencias preferencias = new Preferencias(getApplicationContext());
+        String User_Id = preferencias.getUser_Id();
+        boolean check = preferencias.getSesion();
 
+        if (check) {
+            Intent intent2 = new Intent(MainActivity.this, Login.class);
+            startActivity(intent2);
+            finish();
+        } else {
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mDrawerMenu = (DrawerMenu) getSupportFragmentManager().findFragmentById(R.id.left_drawer);
-        mDrawerMenu.setUp(R.id.left_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar, getSupportActionBar(), this);
+            mDrawerMenu = (DrawerMenu) getSupportFragmentManager().findFragmentById(R.id.left_drawer);
+            mDrawerMenu.setUp(R.id.left_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar, getSupportActionBar(), this);
+
+        }
 
         txtDate = (TextView) findViewById(R.id.txtDate);
         txtHour = (TextView) findViewById(R.id.txtHour);
