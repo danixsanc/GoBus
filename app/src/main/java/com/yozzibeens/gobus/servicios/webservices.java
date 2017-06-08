@@ -6,7 +6,7 @@ package com.yozzibeens.gobus.servicios;
 
 public class webservices {
 
-    public static String URL = "http://192.168.1.171/goBus/api";
+    public static String URL = "http://192.168.198.1/goBus/api";
 
     public static String LoginWebService = URL+"/login_bus";
 

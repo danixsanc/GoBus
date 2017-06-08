@@ -25,6 +25,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
+    compile 'com.google.gms:google-services:3.0.0'
     compile 'com.android.support:appcompat-v7:23.4.0'
 
     compile 'com.android.support:appcompat-v7:23.2.1'
@@ -50,5 +51,6 @@ dependencies {
 
     compile 'com.google.zxing:core:3.2.1'
     compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+
 
 }

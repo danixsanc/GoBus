@@ -85,6 +85,12 @@
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="locked"></activity>
 
+        <activity
+            android:label="Registro"
+            android:name=".app.Registro"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="locked"></activity>
+
     </application>
 
 </manifest>

@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements
     private FloatingActionButton btnBuscar;
     private ImageView imgCity;
     MaterialEditText edtOrigen,edtDestino;
+    private Typeface RobotoCondensed_Regular;
 
     Location locationf;
 
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements
 
             mDrawerMenu = (DrawerMenu) getSupportFragmentManager().findFragmentById(R.id.left_drawer);
             mDrawerMenu.setUp(R.id.left_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar, getSupportActionBar(), this);
+            this.RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
         }
 

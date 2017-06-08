@@ -87,7 +87,7 @@
             android:layout_gravity="center"
             android:textSize="16dp"
             android:background="@drawable/round_corner"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/colorIcon"
             android:textColor="#ffffff"
             android:textAllCaps="false"
             android:text="Iniciar sesión" />
@@ -99,7 +99,7 @@
             android:layout_gravity="center"
             android:textSize="16dp"
             android:background="@drawable/round_corner"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/colorIcon"
             android:textColor="#ffffff"
             android:textAllCaps="false"
             android:text="Registrarse"
