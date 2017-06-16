@@ -6,16 +6,25 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.gson.Gson;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.yozzibeens.gobus.R;
+import com.yozzibeens.gobus.actividades.Resultados;
+import com.yozzibeens.gobus.app.MainActivity;
 import com.yozzibeens.gobus.controlador.UserController;
 import com.yozzibeens.gobus.listener.AsyncTaskListener;
 import com.yozzibeens.gobus.listener.ServicioAsyncService;
@@ -24,6 +33,7 @@ import com.yozzibeens.gobus.servicios.webservices;
 import com.yozzibeens.gobus.solicitud.SolicitudLogin;
 import com.yozzibeens.gobus.utilerias.Preferencias;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -44,6 +54,11 @@ public class Login extends Activity{
     private ResultadoLogin resultadoLogin;
     private UserController userController;
     private Typeface RobotoCondensed_Regular;
+    private GoogleCloudMessaging gcm;
+    private Context context;
+    private String regId;
+    private static final String TAG = "Register Activity";
+    private static final String REG_ID = "regId";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,7 +67,6 @@ public class Login extends Activity{
 
         this.userController = new UserController(this);
         this.gson = new Gson();
-
         this.RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
         btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -65,6 +79,9 @@ public class Login extends Activity{
         inputPassword = (MaterialEditText) findViewById(R.id.loginPassword);
         inputPassword.setTypeface(RobotoCondensed_Regular);
 
+        this.context = getApplication();
+        this.regId = registerGCM();
+
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View view)
@@ -76,9 +93,9 @@ public class Login extends Activity{
                 oData.setPassword(password);
                 LoginWebService(gson.toJson(oData));
 
-                Intent main = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(main);
-                finish();
+                /*Intent intent=new Intent(Login.this, MainActivity.class);
+                startActivity(intent);
+                Login.this.finish();*/
             }
         });
 
@@ -111,20 +128,22 @@ public class Login extends Activity{
                         progressdialog.dismiss();
                     }
                 });
-                progressdialog.show();
+                progressdialog.show();*/
                 pDialog = new SweetAlertDialog(Login.this, SweetAlertDialog.PROGRESS_TYPE);
                 pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                pDialog.setTitleText("Iniciando");
+                pDialog.setTitleText("Iniciando...");
                 pDialog.setCancelable(false);
-                pDialog.show();*/
+                pDialog.show();
             }
 
             @Override
             public void onTaskDownloadedFinished(HashMap<String, Object> result) {
                 try {
-                    int statusCode = Integer.parseInt(result.get("StatusCode").toString());
+                    int statusCode = 0;//Integer.parseInt(result.get("StatusCode").toString());
+                    Log.d("CHAYO ME LA PELA", statusCode+"");
                     if (statusCode == 0) {
                         resultadoLogin = gson.fromJson(result.get("Resultado").toString(), ResultadoLogin.class);
+                        Log.d("Resultado de chayo JOTO",resultadoLogin.isError()+"");
                     }
                 }
                 catch (Exception error) {
@@ -144,15 +163,15 @@ public class Login extends Activity{
 
             @Override
             public void onTaskComplete(HashMap<String, Object> result) {
-                //pDialog.dismiss();
+                pDialog.dismiss();
                 if ((!resultadoLogin.isError()) && resultadoLogin.getData() != null) {
 
                     userController.eliminarTodo();
                     userController.guardarOActualizarUser(resultadoLogin.getData());
 
                     Preferencias preferencias = new Preferencias(getApplicationContext());
-                    Long clientId = resultadoLogin.getData().getUser_Id();
-                    preferencias.setCabbie_Id(clientId);
+                    String userId = resultadoLogin.getData().getUser_Id();
+                    preferencias.setUser_Id(userId);
                     preferencias.setSesion(false);
 
                     Intent main = new Intent(getApplicationContext(), MainActivity.class);
@@ -162,6 +181,7 @@ public class Login extends Activity{
                 else if (resultadoLogin.isError())
                 {
                     String messageError = resultadoLogin.getMessage();
+
                     SweetAlertDialog dialog = new SweetAlertDialog(Login.this, SweetAlertDialog.ERROR_TYPE);
                     dialog.setContentText(messageError)
                             .show();
@@ -178,6 +198,12 @@ public class Login extends Activity{
                     });
                     dialog.show();*/
                 }
+                else{
+                    SweetAlertDialog dialog = new SweetAlertDialog(Login.this, SweetAlertDialog.ERROR_TYPE);
+                    dialog.setContentText("NULO Pinchi kk")
+                            .show();
+                }
+
             }
 
             @Override
@@ -186,5 +212,79 @@ public class Login extends Activity{
             }
         });
         servicioAsyncService.execute();
+    }
+
+    public String registerGCM() {
+
+        gcm = GoogleCloudMessaging.getInstance(this);
+        regId = getRegistrationId(context);
+
+        if (TextUtils.isEmpty(regId)) {
+
+            registerInBackground();
+
+            Log.d("Registro",
+                    "registerGCM - successfully registered with GCM server - regId: "
+                            + regId);
+        } else {
+            //Toast.makeText(getApplicationContext(), "RegId already available. RegId: " + regId, Toast.LENGTH_LONG).show();
+            System.out.print("RegId already available. RegId: " + regId);
+        }
+        return regId;
+    }
+
+    private String getRegistrationId(Context context) {
+        final SharedPreferences prefs = getSharedPreferences(
+                Splash.class.getSimpleName(), Context.MODE_PRIVATE);
+        String registrationId = prefs.getString(REG_ID, "");
+        if (registrationId.isEmpty()) {
+            Log.i(TAG, "Registration not found.");
+            return "";
+        }
+        return registrationId;
+    }
+
+    private void registerInBackground() {
+        final Handler handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        Toast.makeText(context, "Listo", Toast.LENGTH_LONG).show();
+                        break;
+                    case 1:
+                        Toast.makeText(context, "!!!!!", Toast.LENGTH_LONG).show();
+                        break;
+                }
+                super.handleMessage(msg);
+            }
+
+        };
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (gcm == null) {
+                        gcm = GoogleCloudMessaging.getInstance(context);
+                    }
+                    regId = gcm.register("1001209534751");
+
+                    saveRegisterId(context, regId);
+                } catch (IOException ex) {
+                    handler.sendEmptyMessage(1);
+                    Log.e(TAG, ex.getMessage(), ex);
+                }
+            }
+        };
+        new Thread(runnable).start();
+    }
+
+    private void saveRegisterId(Context context, String regId) {
+        final SharedPreferences prefs = getSharedPreferences(
+                Splash.class.getSimpleName(), Context.MODE_PRIVATE);
+        Log.i(TAG, "Saving regId on app version ");
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(REG_ID, regId);
+        editor.commit();
     }
 }

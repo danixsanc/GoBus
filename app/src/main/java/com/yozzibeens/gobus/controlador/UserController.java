@@ -121,9 +121,9 @@ public class UserController {
 
     public User obtenerUser(Long prKey){
         try {
-            DaoSession oRivosPartnerDB = goBusDB.getInstance().openDatabase(context);
-            UserDao oCabbieDao = oRivosPartnerDB.getUserDao();
-            return oCabbieDao.load(prKey);
+            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            UserDao oUserDao = oGoBusDB.getUserDao();
+            return oUserDao.load(prKey);
         }
         catch (Exception error){
             Log.e(TAG, error.getMessage());
@@ -134,12 +134,12 @@ public class UserController {
         }
     }
 
-    public User obtenerCabbiePorCabbieId(String userId){
+    public User obtenerUserPorUserId(String userId){
         try {
-            DaoSession oRivosPartnerDB = goBusDB.getInstance().openDatabase(context);
-            UserDao oCabbieDao = oRivosPartnerDB.getUserDao();
+            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            UserDao oUserDao = oGoBusDB.getUserDao();
 
-            return oCabbieDao.queryBuilder().where(UserDao.Properties.Id.eq(userId)).unique();
+            return oUserDao.queryBuilder().where(UserDao.Properties.User_Id.eq(userId)).unique();
         }
         catch (Exception error){
             Log.e(TAG, error.getMessage());

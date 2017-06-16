@@ -6,7 +6,8 @@ package com.yozzibeens.gobus.modelo;
 
 public class User {
 
-    private Long User_Id;
+    private Long id;
+    private String User_Id;
     private String User_Name;
     private String User_Email;
 
@@ -14,17 +15,28 @@ public class User {
 
     }
 
-    public User(Long user_Id, String user_Name, String user_Email) {
+    public User(Long id, String user_Id, String user_Name, String user_Email) {
+        this.id = id;
         User_Id = user_Id;
         User_Name = user_Name;
         User_Email = user_Email;
     }
 
-    public Long getUser_Id() {
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUser_Id() {
         return User_Id;
     }
 
-    public void setUser_Id(Long user_Id) {
+    public void setUser_Id(String user_Id) {
         User_Id = user_Id;
     }
 
@@ -43,4 +55,6 @@ public class User {
     public void setUser_Email(String user_Email) {
         User_Email = user_Email;
     }
+
+
 }

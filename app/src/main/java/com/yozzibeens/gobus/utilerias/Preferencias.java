@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Created by danixsanc on 27/09/2015.
+ * Created by Antonio on 04/11/2016.
  */
 public class Preferencias {
 
@@ -52,9 +52,9 @@ public class Preferencias {
         return getSettings().getString(USERID, USERID);
     }
 
-    public void setCabbie_Id(Long prSave){
+    public void setUser_Id(String prSave){
         SharedPreferences.Editor editor = getSettings().edit();
-        editor.putLong(USERID, prSave);
+        editor.putString(USERID, prSave);
         editor.commit();
     }
 

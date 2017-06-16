@@ -1,6 +1,5 @@
 package com.yozzibeens.gobus.respuesta;
 
-
 import com.yozzibeens.gobus.modelo.User;
 
 public class ResultadoLogin {

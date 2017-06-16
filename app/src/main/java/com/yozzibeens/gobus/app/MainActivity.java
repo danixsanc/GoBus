@@ -1,7 +1,5 @@
 package com.yozzibeens.gobus.app;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -85,58 +83,57 @@ public class MainActivity extends AppCompatActivity implements
             mDrawerMenu.setUp(R.id.left_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar, getSupportActionBar(), this);
             this.RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
+            txtDate = (TextView) findViewById(R.id.txtDate);
+            txtHour = (TextView) findViewById(R.id.txtHour);
+
+            edtDestino = (MaterialEditText) findViewById(R.id.edtDestino);
+            edtOrigen = (MaterialEditText) findViewById(R.id.edtOrigen);
+
+            btnBuscar = (FloatingActionButton) findViewById(R.id.btnBuscar);
+            btnBuscar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    verificaDatos();
+                }
+            });
+
+            txtDate=(TextView) findViewById(R.id.txtDate);
+            txtDate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calendar now = Calendar.getInstance();
+                    com.wdullaer.materialdatetimepicker.date.DatePickerDialog dpd =
+                            com.wdullaer.materialdatetimepicker.date.DatePickerDialog.newInstance(
+                                    MainActivity.this,
+                                    now.get(Calendar.YEAR),
+                                    now.get(Calendar.MONTH),
+                                    now.get(Calendar.DAY_OF_MONTH)
+                            );
+                    dpd.setAccentColor(Color.parseColor("#14a3ab"));
+                    dpd.show(getFragmentManager(), "Datepickerdialog");
+
+                }
+            });
+
+            txtHour=(TextView) findViewById(R.id.txtHour);
+            txtHour.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calendar now = Calendar.getInstance();
+                    TimePickerDialog tpd = TimePickerDialog.newInstance(
+                            MainActivity.this,
+                            now.get(Calendar.HOUR_OF_DAY),
+                            now.get(Calendar.MINUTE),false
+                    );
+                    tpd.setAccentColor(Color.parseColor("#14a3ab"));
+                    tpd.show(getFragmentManager(), "Timepickerdialog");
+
+                }
+            });
+
+            imgCity = (ImageView) findViewById(R.id.imgCity);
+            imgCity.setAlpha(35);
         }
-
-        txtDate = (TextView) findViewById(R.id.txtDate);
-        txtHour = (TextView) findViewById(R.id.txtHour);
-
-        edtDestino = (MaterialEditText) findViewById(R.id.edtDestino);
-        edtOrigen = (MaterialEditText) findViewById(R.id.edtOrigen);
-
-        btnBuscar = (FloatingActionButton) findViewById(R.id.btnBuscar);
-        btnBuscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                verificaDatos();
-            }
-        });
-
-        txtDate=(TextView) findViewById(R.id.txtDate);
-        txtDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar now = Calendar.getInstance();
-                com.wdullaer.materialdatetimepicker.date.DatePickerDialog dpd =
-                        com.wdullaer.materialdatetimepicker.date.DatePickerDialog.newInstance(
-                                MainActivity.this,
-                                now.get(Calendar.YEAR),
-                                now.get(Calendar.MONTH),
-                                now.get(Calendar.DAY_OF_MONTH)
-                        );
-                dpd.setAccentColor(Color.parseColor("#14a3ab"));
-                dpd.show(getFragmentManager(), "Datepickerdialog");
-
-            }
-        });
-
-        txtHour=(TextView) findViewById(R.id.txtHour);
-        txtHour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar now = Calendar.getInstance();
-                TimePickerDialog tpd = TimePickerDialog.newInstance(
-                        MainActivity.this,
-                        now.get(Calendar.HOUR_OF_DAY),
-                        now.get(Calendar.MINUTE),false
-                );
-            tpd.setAccentColor(Color.parseColor("#14a3ab"));
-            tpd.show(getFragmentManager(), "Timepickerdialog");
-
-            }
-        });
-
-        imgCity = (ImageView) findViewById(R.id.imgCity);
-        imgCity.setAlpha(35);
 
     }
 

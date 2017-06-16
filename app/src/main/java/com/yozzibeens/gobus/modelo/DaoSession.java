@@ -21,7 +21,7 @@ import de.greenrobot.dao.internal.DaoConfig;
  */
 public class DaoSession extends AbstractDaoSession {
 
-    private final DaoConfig cabbieDaoConfig;
+    private final DaoConfig userDaoConfig;
 
     private final UserDao userDao;
 
@@ -29,16 +29,16 @@ public class DaoSession extends AbstractDaoSession {
             daoConfigMap) {
         super(db);
 
-        cabbieDaoConfig = daoConfigMap.get(UserDao.class).clone();
-        cabbieDaoConfig.initIdentityScope(type);
+        userDaoConfig = daoConfigMap.get(UserDao.class).clone();
+        userDaoConfig.initIdentityScope(type);
 
-        userDao = new UserDao(cabbieDaoConfig, this);
+        userDao = new UserDao(userDaoConfig, this);
 
         registerDao(User.class, userDao);
     }
     
     public void clear() {
-        cabbieDaoConfig.getIdentityScope().clear();
+        userDaoConfig.getIdentityScope().clear();
     }
 
     public UserDao getUserDao() {
