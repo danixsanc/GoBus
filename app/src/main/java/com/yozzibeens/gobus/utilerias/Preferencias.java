@@ -45,9 +45,6 @@ public class Preferencias {
         return getSettings().getBoolean(SESION, true);
     }
 
-
-
-
     public String getUser_Id(){
         return getSettings().getString(USERID, USERID);
     }
