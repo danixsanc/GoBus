@@ -3,21 +3,21 @@ package com.yozzibeens.gobus.controlador;
 import android.content.Context;
 import android.util.Log;
 
-import com.yozzibeens.gobus.modelo.DaoSession;
 import com.yozzibeens.gobus.modelo.User;
 import com.yozzibeens.gobus.modelo.UserDao;
-import com.yozzibeens.gobus.modelo.goBusDB;
+import com.yozzibeens.gobus.modelo.DaoSession;
+import com.yozzibeens.gobus.modelo.GoBusDB;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Antonio on 30/05/2017.
+ * Created by savidsalazar
  */
-
 public class UserController {
 
     private static final String TAG = "User";
+
     private Context context;
 
     public UserController(Context prContext){
@@ -26,7 +26,7 @@ public class UserController {
 
     public boolean guardarUser(User prUser){
         try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            DaoSession oGoBusDB = GoBusDB.getInstance().openDatabase(context);
             UserDao oUserDao = oGoBusDB.getUserDao();
             oUserDao.insert(prUser);
             return true;
@@ -36,15 +36,15 @@ public class UserController {
             return false;
         }
         finally {
-            goBusDB.getInstance().closeDatabase();
+            GoBusDB.getInstance().closeDatabase();
         }
     }
-
-    public boolean guardarOActualizarUser(User prCabbie){
+    
+    public boolean guardarOActualizarUser(User prUser){
         try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            DaoSession oGoBusDB = GoBusDB.getInstance().openDatabase(context);
             UserDao oUserDao = oGoBusDB.getUserDao();
-            oUserDao.insertOrReplace(prCabbie);
+            oUserDao.insertOrReplace(prUser);
             return true;
         }
         catch (Exception error){
@@ -52,15 +52,15 @@ public class UserController {
             return false;
         }
         finally {
-            goBusDB.getInstance().closeDatabase();
+            GoBusDB.getInstance().closeDatabase();
         }
     }
 
-    public boolean guardarOActualizarUser(ArrayList<User> prCabbies){
+    public boolean guardarOActualizarUser(ArrayList<User> prUsers){
         try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            DaoSession oGoBusDB = GoBusDB.getInstance().openDatabase(context);
             UserDao oUserDao = oGoBusDB.getUserDao();
-            oUserDao.insertOrReplaceInTx(prCabbies);
+            oUserDao.insertOrReplaceInTx(prUsers);
             return true;
         }
         catch (Exception error){
@@ -68,15 +68,15 @@ public class UserController {
             return false;
         }
         finally {
-            goBusDB.getInstance().closeDatabase();
+            GoBusDB.getInstance().closeDatabase();
         }
     }
 
-    public boolean eliminarUser(User prCabbie){
+    public boolean eliminarUser(User prUser){
         try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            DaoSession oGoBusDB = GoBusDB.getInstance().openDatabase(context);
             UserDao oUserDao = oGoBusDB.getUserDao();
-            oUserDao.delete(prCabbie);
+            oUserDao.delete(prUser);
             return true;
         }
         catch (Exception error){
@@ -84,13 +84,13 @@ public class UserController {
             return false;
         }
         finally {
-            goBusDB.getInstance().closeDatabase();
+            GoBusDB.getInstance().closeDatabase();
         }
     }
 
     public boolean eliminarTodo(){
         try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            DaoSession oGoBusDB = GoBusDB.getInstance().openDatabase(context);
             UserDao oUserDao = oGoBusDB.getUserDao();
             oUserDao.deleteAll();
             return true;
@@ -100,13 +100,13 @@ public class UserController {
             return false;
         }
         finally {
-            goBusDB.getInstance().closeDatabase();
+            GoBusDB.getInstance().closeDatabase();
         }
     }
 
     public List<User> obtenerUser(){
         try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            DaoSession oGoBusDB = GoBusDB.getInstance().openDatabase(context);
             UserDao oUserDao = oGoBusDB.getUserDao();
             return oUserDao.loadAll();
         }
@@ -115,13 +115,13 @@ public class UserController {
             return null;
         }
         finally {
-            goBusDB.getInstance().closeDatabase();
+           GoBusDB.getInstance().closeDatabase();
         }
     }
 
     public User obtenerUser(Long prKey){
         try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
+            DaoSession oGoBusDB = GoBusDB.getInstance().openDatabase(context);
             UserDao oUserDao = oGoBusDB.getUserDao();
             return oUserDao.load(prKey);
         }
@@ -130,23 +130,7 @@ public class UserController {
             return null;
         }
         finally {
-            goBusDB.getInstance().closeDatabase();
-        }
-    }
-
-    public User obtenerUserPorUserId(String userId){
-        try {
-            DaoSession oGoBusDB = goBusDB.getInstance().openDatabase(context);
-            UserDao oUserDao = oGoBusDB.getUserDao();
-
-            return oUserDao.queryBuilder().where(UserDao.Properties.User_Id.eq(userId)).unique();
-        }
-        catch (Exception error){
-            Log.e(TAG, error.getMessage());
-            return null;
-        }
-        finally {
-            goBusDB.getInstance().closeDatabase();
+            GoBusDB.getInstance().closeDatabase();
         }
     }
 }

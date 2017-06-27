@@ -1,13 +1,9 @@
 package com.yozzibeens.gobus.app;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,8 +19,6 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.gson.Gson;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.yozzibeens.gobus.R;
-import com.yozzibeens.gobus.actividades.Resultados;
-import com.yozzibeens.gobus.app.MainActivity;
 import com.yozzibeens.gobus.controlador.UserController;
 import com.yozzibeens.gobus.listener.AsyncTaskListener;
 import com.yozzibeens.gobus.listener.ServicioAsyncService;
@@ -65,7 +59,9 @@ public class Login extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        this.userController = new UserController(this);
+        resultadoLogin = new ResultadoLogin();
+
+        this.userController = new UserController(getApplicationContext());
         this.gson = new Gson();
         this.RobotoCondensed_Regular = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
 
@@ -128,18 +124,18 @@ public class Login extends Activity{
                         progressdialog.dismiss();
                     }
                 });
-                progressdialog.show();*/
+                progressdialog.show();
                 pDialog = new SweetAlertDialog(Login.this, SweetAlertDialog.PROGRESS_TYPE);
                 pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
                 pDialog.setTitleText("Iniciando...");
                 pDialog.setCancelable(false);
-                pDialog.show();
+                pDialog.show();*/
             }
 
             @Override
             public void onTaskDownloadedFinished(HashMap<String, Object> result) {
                 try {
-                    int statusCode = 0;//Integer.parseInt(result.get("StatusCode").toString());
+                    int statusCode = Integer.parseInt(result.get("StatusCode").toString());
                     Log.d("CHAYO ME LA PELA", statusCode+"");
                     if (statusCode == 0) {
                         resultadoLogin = gson.fromJson(result.get("Resultado").toString(), ResultadoLogin.class);
@@ -148,9 +144,9 @@ public class Login extends Activity{
                 }
                 catch (Exception error) {
                     String messageError = "Ocurrio un error inesperado";
-                    SweetAlertDialog dialog = new SweetAlertDialog(Login.this, SweetAlertDialog.ERROR_TYPE);
+                    /*SweetAlertDialog dialog = new SweetAlertDialog(Login.this, SweetAlertDialog.ERROR_TYPE);
                     dialog.setContentText(messageError)
-                            .show();
+                            .show();*/
 
                 }
             }
@@ -163,7 +159,7 @@ public class Login extends Activity{
 
             @Override
             public void onTaskComplete(HashMap<String, Object> result) {
-                pDialog.dismiss();
+                //pDialog.dismiss();
                 if ((!resultadoLogin.isError()) && resultadoLogin.getData() != null) {
 
                     userController.eliminarTodo();

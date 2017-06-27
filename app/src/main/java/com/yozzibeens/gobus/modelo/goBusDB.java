@@ -6,26 +6,26 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by Antonio on 30/05/2017.
+ * Created by SavidSalazar
  */
 
-public class goBusDB {
+public class GoBusDB {
     private AtomicInteger mOpenCounter = new AtomicInteger();
 
-    private static goBusDB instance;
+    private static GoBusDB instance;
     private static DaoMaster.DevOpenHelper mDatabaseHelper;
     private SQLiteDatabase mDatabase;
     private DaoSession daoSession;
 
     public static synchronized void initializeInstance() {
         if (instance == null) {
-            instance = new goBusDB();
+            instance = new GoBusDB();
         }
     }
 
-    public static synchronized goBusDB getInstance() {
+    public static synchronized GoBusDB getInstance() {
         if (instance == null) {
-            throw new IllegalStateException(goBusDB.class.getSimpleName() +
+            throw new IllegalStateException(GoBusDB.class.getSimpleName() +
                     " is not initialized, call initializeInstance(..) method first.");
         }
         return instance;
